@@ -9,6 +9,7 @@ import Login from "../pages/Login";
 function App() {
   return (
     <Container>
+      
       <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<Home />} />
@@ -21,6 +22,17 @@ function App() {
   );
 }
 export default App;
+
+// function App() {
+//   return (
+//     <Container>
+      
+      
+//     </Container>
+//   );
+// }
+// export default App;
+
 
 // function App() {
 //   return (

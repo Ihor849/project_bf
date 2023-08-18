@@ -63,7 +63,7 @@ export const iconPawprint = (
 
 // </svg>
 export const iconMenuHamburger = (
-  <svg viewBox="0 0 32 32" width="24" className="iconMenuHamburger">
+  <svg viewBox="-10 -5 32 32" width="40" className="iconMenuHamburger">
     <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
   </svg>
 );

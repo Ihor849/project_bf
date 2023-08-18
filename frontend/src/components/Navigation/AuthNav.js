@@ -1,27 +1,24 @@
-import { iconPawprint } from "../../images/icons";
-import { Button, ButtonTransparent } from "../Button/Button";
-import { AuthBtnWrap, StyledLink } from "./Navigation.styled";
+// import { iconPawprint } from "../../images/icons";
+// import { Button, ButtonTransparent } from "../Button/Button";
+
+import { AuthBtnWrap, StyledLinkLog, StyledLinkReg } from "./Navigation.styled";
 
 
 
 export const AuthNav = () => {
   return (
-    // <AuthBtnWrap>
-    //   <Button>Login{iconPawprint}</Button>
-    //   <ButtonTransparent>Registretion</ButtonTransparent>
-      
-    // </AuthBtnWrap>
-    <div>
-    <StyledLink to="/register" 
+    
+    <AuthBtnWrap>
+    <StyledLinkReg to="/register" 
     exact="true"
     >
       Register
-    </StyledLink>
-    <StyledLink to="/login" 
+    </StyledLinkReg>
+    <StyledLinkLog to="/login" 
     exact="true"
     >
       Login
-    </StyledLink>
-  </div>
+    </StyledLinkLog>
+  </AuthBtnWrap>
   );
 }

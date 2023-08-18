@@ -1,7 +1,9 @@
+@import-normalize;
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Manrope:wght@400;500;600;800&display=swap');
 body {
 
   margin: 0;
+  padding: 0;
   font-family: -apple-system, Manrope,  sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -45,8 +47,8 @@ img {
   --red: #f43f5e;
   --grey: #888888;
 
-  --gradient-l: #ff5f40;
-  --gradient-r: #ffcf45;
+  --gradient-yr: #ff5f40;
+  --gradient-yl: #ffcf45;
 
   --gradient-bl: #88c7fc;
   --gradient-br: #4da5f3;

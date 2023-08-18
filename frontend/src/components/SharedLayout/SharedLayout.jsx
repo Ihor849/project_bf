@@ -4,19 +4,22 @@ import { iconLogo, iconMenuHamburger} from "../../images/icons";
 import {AuthNav} from "../Navigation/AuthNav"
 
 
+
 import { Nav } from "../Navigation/Nav";
 
-import { LayoutWrap } from "./SharedLayout.styled";
+import { AuthNavWrap, LayoutWrap, LogoLink } from "./SharedLayout.styled";
 import { ButtonBurger } from "../Navigation/Navigation.styled";
 
 export const SharedLayout = () => {
   return (
     <div className="sharedLayout">
       <LayoutWrap className="layoutWrap">
-        {iconLogo}
+        <LogoLink to="/">{iconLogo}</LogoLink>
         <Nav />
-        <AuthNav/>
-        <ButtonBurger>{iconMenuHamburger}</ButtonBurger>
+        <AuthNavWrap>
+          <AuthNav/>
+          <ButtonBurger>{iconMenuHamburger}</ButtonBurger>
+        </AuthNavWrap>
         
       </LayoutWrap>
       <Suspense>
