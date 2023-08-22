@@ -1,5 +1,6 @@
 import React from 'react';
-import { NavWrap, StyledLink } from "./Navigation.styled"
+import { NavWrap, StyledLink } from './Nav.styled';
+
 
 
 export const Nav = () => {

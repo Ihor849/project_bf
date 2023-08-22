@@ -19,7 +19,7 @@ export const RegButton = ({ children, ...props }) => {
 };
 
 export const OutButton = ({ children, ...props }) => {
-  return <StyledOutButton type='submit' {...props}> {children}</StyledOutButton>;
+  return <StyledOutButton  {...props}> {children}</StyledOutButton>;
 };
 
 export const FilterButton = ({ children, ...props }) => {
@@ -44,5 +44,6 @@ export const LearnButton = ({ children, ...props }) => {
 
 
 export const RadioButton = ({ children, ...props }) => {
-  return <StyledLearnButton type='button' {...props}> {children}</StyledLearnButton>;
+  return <StyledRadioButton type='button' {...props}> {children}</StyledRadioButton>;
 };
+
