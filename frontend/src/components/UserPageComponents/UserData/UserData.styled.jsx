@@ -1,5 +1,6 @@
 import { Form } from 'formik';
-// import { CheckIcon, CrossIcon } from 'shared/utils/icons';
+import { ReactComponent as CheckIcon } from '../../../images/userPageIcons/check.svg';
+import { ReactComponent as CrossIcon } from '../../../images/userPageIcons/cross-small.svg';
 import styled from 'styled-components';
 
 export const UserInfo = styled.div`
@@ -14,7 +15,7 @@ export const UserInfo = styled.div`
 `;
 
 export const StylizedForm = styled(Form)`
-    @media screen and (min-width: 768px) max-width: 1280px {
+    @media screen and (min-width: 768px) and (max-width: 1280px) {
         width: 182px;
     }
 `;
@@ -46,13 +47,13 @@ export const ConfirmButtonWrap = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 10px;
 `;
 
 export const EditButton = styled.button`
     display: flex;
     align-items: center;
-    margin-top: 14px;
+    /* margin-top: 14px; */
     border: none;
     padding-top: 0;
     padding-right: 5px;
@@ -67,6 +68,9 @@ export const EditButton = styled.button`
     letter-spacing: 0.04em;
     box-shadow: none;
     transition: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    color: var(--text-color);
+    transition: all 1s ease-in-out;
+    cursor: pointer;
 
     &:hover,
     &:focus {
@@ -74,12 +78,12 @@ export const EditButton = styled.button`
     }
 `;
 
-// export const Cross = styled(CrossIcon)`
-//     stroke: ${({ theme }) => theme.colors.red};
-//     margin-right: ${({ theme }) => theme.space[3] + 'px'};
-// `;
+export const Cross = styled(CrossIcon)`
+    stroke: #F43F5E;
+    margin-right: 8px;
+`;
 
-// export const Check = styled(CheckIcon)`
-//     color: ${({ theme }) => theme.colors.green};
-//     margin-right: ${({ theme }) => theme.space[3] + 'px'};
-// `;
+export const Check = styled(CheckIcon)`
+    color: #00c3ad;
+    margin-right: 8px;
+`;

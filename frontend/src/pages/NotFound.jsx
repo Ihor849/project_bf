@@ -1,14 +1,12 @@
-import { NotfoundContent } from "../components/Notfound/NotfoundCont";
-import { Notfound } from "./pages.styled/Pages.styled";
+import { NotfoundContent } from '../components/Notfound/NotfoundCont';
+import { Notfound } from './pages.styled/Pages.styled';
 
-
-
-export const NotfoundPage = () => {
+const NotfoundPage = () => {
     return (
-        <Notfound NotfoundWrap className="notfoundWrap">
-            
-            <NotfoundContent/>
-            
+        <Notfound className="notfoundWrap">
+            <NotfoundContent />
         </Notfound>
     );
 };
+
+export default NotfoundPage;

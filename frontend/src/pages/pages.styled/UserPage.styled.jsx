@@ -32,25 +32,26 @@ export const TitleWrap = styled.div`
 `;
 
 export const Card = styled.div`
-    padding-top: 20px;
+    /* padding-top: 20px;
     padding-right: 8px;
     padding-bottom: 24px;
-    padding-left: 8px;
-    background: #ffffff;
+    padding-left: 8px; */
+    background: var(--background-color-form);
+    transition: all 1s ease-in-out;
     box-shadow: 3px 8px 14px rgba(136, 198, 253, 0.19);
     border-radius: 20px;
     @media screen and (min-width: 768px) {
         width: 704px;
-        padding-top: 20px;
+        /* padding-top: 20px;
         padding-right: 76px;
         padding-bottom: 20px;
-        padding-left: 20px;
+        padding-left: 20px; */
         border-radius: 40px;
     }
     @media screen and (min-width: 1280px) {
         width: 395px;
         height: 520px;
-        padding: 20px;
+        /* padding: 20px; */
     }
 `;
 
@@ -59,7 +60,10 @@ export const Title = styled.p`
     font-size: 20px;
     line-height: 1.36;
     letter-spacing: 0.04em;
+    color: var(--text-color);
+    transition: all 1s ease-in-out;
     @media screen and (min-width: 768px) {
         font-size: 28px;
     }
 `;
+
