@@ -10,8 +10,8 @@ import {
 import { Button, ButtonTransparent } from '../../../Button/Button';
 import { BiArrowBack } from 'react-icons/bi';
 import { iconPawprint } from '../../../../images/icons';
-import { useAll } from 'hooks/useAll';
-import { langEN, langUA } from 'utils/languages';
+import  {useAll}  from '../../../../hooks/useAll';
+import { langEN, langUA } from '../../../../utils/languages';
 
 export default function ChooseOption({
     children,

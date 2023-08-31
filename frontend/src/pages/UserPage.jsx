@@ -10,18 +10,18 @@ import {
 } from './pages.styled/UserPage.styled';
 import { useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { useAuth } from 'hooks/useAuth';
-import { ModalPopup } from 'components/ModalPopup/ModalPopup';
-import { modal4 } from 'modals/modals';
+import { useAuth } from '../hooks/useAuth';
+import { ModalPopup } from '../components/ModalPopup/ModalPopup';
+import { modal4 } from '../modals/modals';
 
-import PetsItem from 'components/UserPageComponents/PetsItem/PetsItem';
+import PetsItem from '../components/UserPageComponents/PetsItem/PetsItem';
 import { useDispatch } from 'react-redux';
 import petsOperations from '../redux/pets/petsOperations';
-import { useAll } from 'hooks/useAll';
-import { setRegToZero } from 'redux/auth/auth-slice';
-import { langEN, langUA } from 'utils/languages';
-import UserForm from 'components/Forms/FormUser/UserForm';
-import { TempPetsItem } from 'components/UserPageComponents/TempPetsItem/TempPetsItem';
+import { useAll } from '../hooks/useAll';
+import { setRegToZero } from '../redux/auth/auth-slice';
+import { langEN, langUA } from '../utils/languages';
+import UserForm from '../components/Forms/FormUser/UserForm';
+import { TempPetsItem } from '../components/UserPageComponents/TempPetsItem/TempPetsItem';
 
 
 const UserPage = () => {

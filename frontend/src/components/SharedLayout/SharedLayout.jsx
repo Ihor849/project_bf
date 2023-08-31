@@ -16,16 +16,16 @@ import { Nav } from '../Nav/Nav';
 import { RxHamburgerMenu } from 'react-icons/rx';
 import { StyledLogo } from '../Button/Button.styled';
 import { MobileMenu } from '../MobileMenu/MobileMenu';
-import { useAuth } from 'hooks/useAuth';
-import { UserNav } from 'components/UserNav/UserNav';
+import { useAuth } from '../../hooks/useAuth';
+import { UserNav } from '../UserNav/UserNav';
 import { DotLoader } from 'react-spinners';
-import { toggleLang } from 'redux/lang/langSlice';
-import { toggleTheme } from 'redux/theme/themeSlice';
+import { toggleLang } from '../../redux/lang/langSlice';
+import { toggleTheme } from '../../redux/theme/themeSlice';
 import { useDispatch } from 'react-redux';
-import { useAll } from 'hooks/useAll';
+import { useAll } from '../../hooks/useAll';
 import { MdOutlineNightlight } from 'react-icons/md';
 import { MdOutlineLightMode } from 'react-icons/md';
-import { langEN, langUA } from 'utils/languages';
+import { langEN, langUA } from '../../utils/languages';
 import { ToastContainer } from 'react-toastify';
 
 const SharedLayout = () => {

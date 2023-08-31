@@ -1,8 +1,8 @@
 import { PetsHeader, Title } from "./PetsData.styled";
 import AddPetBtn from "../../AddPetButton/AddPetButton";
 import {  useEffect, useState } from 'react';
-import { useAll } from "hooks/useAll";
-import { langEN, langUA } from "utils/languages";
+import { useAll } from "../../../hooks/useAll";
+import { langEN, langUA } from "../../../utils/languages";
 
 
 const PetsData = ({ state }) => {

@@ -5,10 +5,10 @@ import AddYourPet from './AddYourPet/AddYourPet';
 import AddSellPet from './AddSellPet/AddSellPet';
 import AddLostPet from './AddLostPet/AddLostPet';
 import AddInGoodHandsPet from './AddInGoodHandsPet/AddInGoodHandsPet';
-import { useLocalStorage } from 'hooks/useLocalStaoreage';
+import  {useLocalStorage}  from '../../../hooks/useLocalStaoreage';
 import { useNavigate } from 'react-router-dom';
-import { useAll } from 'hooks/useAll';
-import { langEN, langUA } from 'utils/languages';
+import { useAll } from '../../../hooks/useAll';
+import { langEN, langUA } from '../../../utils/languages';
 
 export default function AddPetForm({ state }) {
     const [stepNumber, setStepNumber] = useLocalStorage('stepNumber', 1);

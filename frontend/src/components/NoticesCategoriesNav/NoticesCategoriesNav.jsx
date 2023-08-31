@@ -2,9 +2,9 @@ import {  useEffect, useState } from 'react';
 import { RadioButton } from '../Button/Button';
 import { NavWrapper } from '../../pages/pages.styled/NoticesPage.styled';
 import { BtnWrap } from './NoticesCategoriesNav.styled';
-import { useAuth } from 'hooks/useAuth';
-import { useAll } from 'hooks/useAll';
-import { langEN, langUA } from 'utils/languages';
+import { useAuth } from '../../hooks/useAuth';
+import { useAll } from '../../hooks/useAll';
+import { langEN, langUA } from '../../utils/languages';
 
 export default function NoticesCategoriesNav({ setActiveIndexFunction, activeIndex }) {
 

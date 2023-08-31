@@ -8,11 +8,11 @@ import {
     UserWrap,
 } from './UserNav.styled';
 import { iconUser } from '../../images/icons';
-import { modal1, modal5 } from 'modals/modals';
-import { ModalPopup } from 'components/ModalPopup/ModalPopup';
-import { useAll } from 'hooks/useAll';
-import { langEN, langUA } from 'utils/languages';
-import { useAuth } from 'hooks/useAuth';
+import { modal1, modal5 } from '../../modals/modals';
+import { ModalPopup } from '../ModalPopup/ModalPopup';
+import { useAll } from '../../hooks/useAll';
+import { langEN, langUA } from '../../utils/languages';
+import { useAuth } from '../../hooks/useAuth';
 
 export const UserNav = ({ onClose }) => {
     const { language } = useAll();

@@ -1,9 +1,9 @@
 import React, { useRef } from 'react';
 import PersonalDetails from './PersonalDetails/PersonalDetails';
 import MoreInfo from './MoreInfo/MoreInfo';
-import { useLocalStorage } from 'hooks/useLocalStaoreage';
+import { useLocalStorage } from '../../../../hooks/useLocalStaoreage';
 import { useNavigate } from 'react-router-dom';
-import operations from 'redux/pets/petsOperations';
+import operations from '../../../../redux/pets/petsOperations';
 import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
 

@@ -1,8 +1,8 @@
 import {  useEffect, useState } from 'react';
 import { iconPawprint } from '../../images/icons';
 import { AuthBtnWrap, StyledLinkLog, StyledLinkReg } from './AuthNav.styled';
-import { useAll } from 'hooks/useAll';
-import { langEN, langUA } from 'utils/languages';
+import { useAll } from '../../hooks/useAll';
+import { langEN, langUA } from '../../utils/languages';
 
 export const AuthNav = ({onClose}) => {
 

@@ -13,10 +13,10 @@ import {
 import {ReactComponent as DeletePet} from '../../../images/userPageIcons/trash-2.svg'
 import { Btn } from '../IconButton/IconButton.styled';
 import {  useEffect, useState } from 'react';
-import { modal1, modal2 } from 'modals/modals';
-import { ModalPopup } from 'components/ModalPopup/ModalPopup';
-import { useAll } from 'hooks/useAll';
-import { langEN, langUA } from 'utils/languages';
+import { modal1, modal2 } from '../../../modals/modals';
+import { ModalPopup } from '../../ModalPopup/ModalPopup';
+import { useAll } from '../../../hooks/useAll';
+import { langEN, langUA } from '../../../utils/languages';
 
 
 const PetsItem = ({

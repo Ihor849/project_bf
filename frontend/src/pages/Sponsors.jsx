@@ -6,11 +6,11 @@ import {
     Wrapper,
 } from './pages.styled/Pages.styled';
 import { SponsorCard } from '../components/Sponsors/SponsorsCard';
-import { useAll } from 'hooks/useAll';
-import { langEN, langUA } from 'utils/languages';
+import { useAll } from '../hooks/useAll';
+import { langEN, langUA } from '../utils/languages';
 import { useDispatch, useSelector } from 'react-redux';
 import sponsorsOperation from '../redux/sponsors/sponsorsOperations';
-import { getSponsorsList } from 'redux/sponsors/sponsorsSelectors';
+import { getSponsorsList } from '../redux/sponsors/sponsorsSelectors';
 
 const SponsorsPage = () => {
     const dispatch = useDispatch();

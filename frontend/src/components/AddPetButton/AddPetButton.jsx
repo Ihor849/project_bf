@@ -2,9 +2,9 @@ import { ReactComponent as PlusIcon } from '../../images/addPetBtnIcons/plus.svg
 import {ReactComponent as PlusSmallIcon} from '../../images/addPetBtnIcons/plus-small.svg'
 import { useWindowSize } from '../../hooks/useWindowSize';
 import { Btn } from './AddPetButton.styled';
-import { useAll } from 'hooks/useAll';
+import { useAll } from '../../hooks/useAll';
 import {  useEffect, useState } from 'react';
-import { langEN, langUA } from 'utils/languages';
+import { langEN, langUA } from '../../utils/languages';
 
 const AddPetBtn = ({ state }) => {
 

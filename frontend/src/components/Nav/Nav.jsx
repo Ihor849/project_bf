@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavWrap, StyledLink } from './Nav.styled';
-import { useAll } from 'hooks/useAll';
-import { langEN, langUA } from 'utils/languages';
+import { useAll } from '../../hooks/useAll';
+import { langEN, langUA } from '../../utils/languages';
 import {  useEffect, useState } from 'react';
 
 

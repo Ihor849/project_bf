@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 
 import { HomeTitle, HomeWrapper } from './pages.styled/Pages.styled';
-import { useAll } from 'hooks/useAll';
-import { langEN, langUA } from 'utils/languages';
+import { useAll } from '../hooks/useAll';
+import { langEN, langUA } from '../utils/languages';
 
 const Home = () => {
     const { language } = useAll();

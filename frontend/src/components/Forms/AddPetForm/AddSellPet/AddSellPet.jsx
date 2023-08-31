@@ -1,10 +1,10 @@
 import React, { useRef } from 'react';
 import PersonalDetails from './PersonalDetails/PersonalDetails';
 import MoreInfo from './MoreInfo/MoreInfo';
-import { useLocalStorage } from 'hooks/useLocalStaoreage';
+import { useLocalStorage } from '../../../../hooks/useLocalStaoreage';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import operations from 'redux/notices/notices-operations';
+import operations from '../../../../redux/notices/notices-operations';
 import { toast } from 'react-toastify';
 
 export default function AddSellPet({

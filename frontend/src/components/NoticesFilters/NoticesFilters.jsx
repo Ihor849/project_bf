@@ -15,13 +15,13 @@ import {
     RadioInput,
     RadioLabel,
 } from './NoticesFilters.styled';
-import { modal1 } from 'modals/modals';
-import { useAuth } from 'hooks/useAuth';
+import { modal1 } from '../../modals/modals';
+import { useAuth } from '../../hooks/useAuth';
 import { useNavigate } from 'react-router-dom';
-import { ModalPopup } from 'components/ModalPopup/ModalPopup';
-import { useAll } from 'hooks/useAll';
-import { setFilterByAgeIdx, setFilterByGender } from 'redux/filter/filterSlice';
-import { langEN, langUA } from 'utils/languages';
+import { ModalPopup } from '../ModalPopup/ModalPopup';
+import { useAll } from '../../hooks/useAll';
+import { setFilterByAgeIdx, setFilterByGender } from '../../redux/filter/filterSlice';
+import { langEN, langUA } from '../../utils/languages';
 
 export default function NoticesFilters({ state }) {
 

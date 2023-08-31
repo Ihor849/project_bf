@@ -11,13 +11,13 @@ import { ButtonTransparent, FavButton, TrashButton } from '../Button/Button';
 import { Tab } from '../Tab/Tab';
 import { CardTitle, CardWrapper, ImgWrapper } from './MainCard.styled';
 import { CategoryWrapp } from '../Tab/Tab.styled';
-import { modal1, modal2, modal3 } from 'modals/modals';
-import { useAuth } from 'hooks/useAuth';
-import { ModalPopup } from 'components/ModalPopup/ModalPopup';
+import { modal1, modal2, modal3 } from '../../modals/modals'
+import { useAuth } from '../../hooks/useAuth';
+import { ModalPopup } from '../ModalPopup/ModalPopup';
 import { useDispatch } from 'react-redux';
-import operations from 'redux/notices/notices-operations';
-import { useAll } from 'hooks/useAll';
-import { langEN, langUA } from 'utils/languages';
+import operations from '../../redux/notices/notices-operations';
+import { useAll } from '../../hooks/useAll';
+import { langEN, langUA } from '../../utils/languages';
 
 import { toast } from 'react-toastify';
 

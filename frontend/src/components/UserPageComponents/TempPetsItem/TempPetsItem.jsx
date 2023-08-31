@@ -4,8 +4,8 @@ import { PetImage } from '../PetsItem/PetsItem.styled'
 import PetAvatar from '../../../images/dog.png'
 import { TempCard } from './TempPetsItem.styled'
 import {  useEffect, useState } from 'react';
-import { useAll } from 'hooks/useAll';
-import { langEN, langUA } from 'utils/languages';
+import { useAll } from '../../../hooks/useAll';
+import { langEN, langUA } from '../../../utils/languages';
 
 export  const TempPetsItem = () => {
     const { language} = useAll()

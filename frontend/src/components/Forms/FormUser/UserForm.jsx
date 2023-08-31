@@ -7,8 +7,8 @@ import {
     UserFormWrap,
     UserPhotoWrap,
 } from './UserForm.styled';
-import { IconCross, iconPen } from 'images/icons';
-import { Button, OutButton } from 'components/Button/Button';
+import { IconCross, iconPen } from '../../../images/icons';
+import { Button, OutButton } from '../../../components/Button/Button';
 import { MdOutlineLogout } from 'react-icons/md';
 import {
     Avatar,
@@ -18,19 +18,19 @@ import {
     EditButton,
     ImageControls,
 } from '../../UserPageComponents/UserData/UserData.styled';
-import { useAll } from 'hooks/useAll';
-import { langEN, langUA } from 'utils/languages';
+import { useAll } from '../../../hooks/useAll';
+import { langEN, langUA } from '../../../utils/languages';
 import { useDispatch } from 'react-redux';
 import operations from '../../../redux/auth/auth-operations';
 import { ReactComponent as Camera } from '../../../images/userPageIcons/camera.svg';
 import avatarDefault2x from '../../../images/Photo_default@2x.jpg';
-import { useAuth } from 'hooks/useAuth';
+import { useAuth } from '../../../hooks/useAuth';
 import { object, string } from 'yup';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { toast } from 'react-toastify';
-import { modal1, modal5 } from 'modals/modals';
-import { ModalPopup } from 'components/ModalPopup/ModalPopup';
+import { modal1, modal5 } from '../../../modals/modals';
+import { ModalPopup } from '../../ModalPopup/ModalPopup';
 
 const schema = object({
     email: string().matches(

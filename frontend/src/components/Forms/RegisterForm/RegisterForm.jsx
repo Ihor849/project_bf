@@ -17,9 +17,9 @@ import { IconCross, iconEyes } from '../../../images/icons';
 import { useForm } from 'react-hook-form';
 import { object, string } from 'yup';
 import { useDispatch } from 'react-redux';
-import { authOperations } from 'redux/auth';
-import { useAll } from 'hooks/useAll';
-import { langEN, langUA } from 'utils/languages';
+import { authOperations } from '../../../redux/auth';
+import { useAll } from '../../../hooks/useAll';
+import { langEN, langUA } from '../../../utils/languages';
 import { toast } from 'react-toastify';
 
 const schema = object({

@@ -16,9 +16,9 @@ import { IconCross, iconPawprint } from '../../../../../images/icons';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
 import { object, string } from 'yup';
-import { useLocalStorage } from 'hooks/useLocalStaoreage';
-import { useAll } from 'hooks/useAll';
-import { langEN, langUA } from 'utils/languages';
+import { useLocalStorage } from '../../../../../hooks/useLocalStaoreage';
+import { useAll } from '../../../../../hooks/useAll';
+import { langEN, langUA } from '../../../../../utils/languages';
 
 
 const schema = object({

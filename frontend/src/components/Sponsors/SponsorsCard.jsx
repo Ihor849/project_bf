@@ -1,5 +1,5 @@
-import { LinkSpan } from 'pages/pages.styled/Pages.styled';
-import { useEffect, useState } from 'react';
+import { LinkSpan } from '../../pages/pages.styled/Pages.styled';
+import { useState } from 'react';
 import {
     ImgWrap,
     Span,

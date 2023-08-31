@@ -9,9 +9,9 @@ import { BsSearch } from 'react-icons/bs';
 import { useDispatch } from 'react-redux';
 
 import noticesOperations from '../../redux/notices/notices-operations';
-import { useAll } from 'hooks/useAll';
-import { langEN, langUA } from 'utils/languages';
-import { SearchButton, SearchForm } from 'pages/pages.styled/NoticesPage.styled';
+import { useAll } from '../../hooks/useAll';
+import { langEN, langUA } from '../../utils/languages';
+import { SearchButton, SearchForm } from '../../pages/pages.styled/NoticesPage.styled';
 
 export default function NoticesSearch({ search, setFilterValueFunction, filterValue, activeIndex }) {
     const { language } = useAll();

@@ -18,13 +18,13 @@ import {
 } from './pages.styled/Pages.styled';
 import { StyledLink } from '../components/Button/Button.styled';
 
-import { iconRowLeft } from 'images/icons';
-import { setFilterNews } from 'redux/filter/filterSlice';
-import { getNewsFilter } from 'redux/filter/filterSelectors';
-import { getNewsList } from 'redux/news/newsSelectors';
+import { iconRowLeft } from '../images/icons';
+import { setFilterNews } from '../redux/filter/filterSlice';
+import { getNewsFilter } from '../redux/filter/filterSelectors';
+import { getNewsList } from '../redux/news/newsSelectors';
 import newsOperations from '../redux/news/newsOperations';
-import { useAll } from 'hooks/useAll';
-import { langEN, langUA } from 'utils/languages';
+import { useAll } from '../hooks/useAll';
+import { langEN, langUA } from '../utils/languages';
 import notFoundContent from '../images/notFoundContent.png';
 
 const NewsPage = () => {

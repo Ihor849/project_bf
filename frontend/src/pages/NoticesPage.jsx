@@ -14,13 +14,13 @@ import {
     PaginationWrapper,
 } from './pages.styled/Pages.styled';
 import { useLocation, useSearchParams } from 'react-router-dom';
-import { getReRender } from 'redux/notices/notices-selectors';
+import { getReRender } from '../redux/notices/notices-selectors';
 import { useDispatch, useSelector } from 'react-redux';
 import noticesOperations from '../redux/notices/notices-operations';
-import { useAll } from 'hooks/useAll';
-import { iconRowLeft } from 'images/icons';
+import { useAll } from '../hooks/useAll';
+import { iconRowLeft } from '../images/icons';
 import { useState } from 'react';
-import { useLocalStorage } from 'hooks/useLocalStaoreage';
+import { useLocalStorage } from '../hooks/useLocalStaoreage';
 import notFoundContent from '../images/notFoundContent.png';
 
 export default function NoticesPage() {

@@ -28,19 +28,19 @@ import {
     OutButton,
 } from '../Button/Button';
 import noticesOperations from '../../redux/notices/notices-operations';
-import { setModalClose, setModalOpen } from 'redux/modal/modalSlice';
-import { useAll } from 'hooks/useAll';
-import { toggleSell } from 'redux/sort/sortSlice';
-import { authOperations } from 'redux/auth';
-import { langEN, langUA } from 'utils/languages';
+import { setModalClose, setModalOpen } from '../../redux/modal/modalSlice';
+import { useAll } from '../../hooks/useAll';
+import { toggleSell } from '../../redux/sort/sortSlice';
+import { authOperations } from '../../redux/auth';
+import { langEN, langUA } from '../../utils/languages';
 import petsOperations from '../../redux/pets/petsOperations';
-import { StyledLink } from 'components/Button/Button.styled';
-import { iconPawprint } from 'images/icons';
-import { setRegToZero } from 'redux/auth/auth-slice';
+import { StyledLink } from '../Button/Button.styled';
+import { iconPawprint } from '../../images/icons';
+import { setRegToZero } from '../../redux/auth/auth-slice';
 import {
     StyledLinkLog,
     StyledLinkReg,
-} from 'components/AuthNav/AuthNav.styled';
+} from '../AuthNav/AuthNav.styled';
 import { toast } from 'react-toastify';
 
 const modalRoot = document.querySelector('#modal-root');

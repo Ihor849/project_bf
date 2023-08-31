@@ -15,15 +15,15 @@ import {
     ProfileWrap,
     StyledLinkOut,
     StyledUserLink,
-} from 'components/UserNav/UserNav.styled';
+} from '../UserNav/UserNav.styled';
 import { MdOutlineLogout } from 'react-icons/md';
-import { useAuth } from 'hooks/useAuth';
-import {} from 'redux/sort/sortSlice';
-import { ModalPopup } from 'components/ModalPopup/ModalPopup';
-import { modal1, modal5 } from 'modals/modals';
-import { useAll } from 'hooks/useAll';
-import { langEN, langUA } from 'utils/languages';
-import { Avatar } from 'components/UserPageComponents/UserData/UserData.styled';
+import { useAuth } from '../../hooks/useAuth';
+import {} from '../../redux/sort/sortSelectors';
+import { ModalPopup } from '../ModalPopup/ModalPopup';
+import { modal1, modal5 } from '../../modals/modals';
+import { useAll } from '../../hooks/useAll';
+import { langEN, langUA } from '../../utils/languages';
+import { Avatar } from '../UserPageComponents/UserData/UserData.styled';
 
 export const MobileMenu = ({ isOpen, onClose }) => {
     const { language } = useAll();
