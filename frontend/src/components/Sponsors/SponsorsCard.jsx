@@ -21,9 +21,8 @@ export const SponsorCard = ({ item }) => {
     };
 
 
-    const workHours = item.workDays
-
-
+    const workHours = item.workDays || []
+   
     // const workHours = [
     //     { isOpen: false,  },
     //     { isOpen: false,  },
@@ -36,6 +35,7 @@ export const SponsorCard = ({ item }) => {
     //   ]
 
     console.log('item', item.workDays)
+    
     const email = item.email ? item.email : 'notemail@gmail.com';
     const phone = item.phone ? item.phone : 'notphone';
     let fromTime =
@@ -87,6 +87,7 @@ export const SponsorCard = ({ item }) => {
                             {fromTime} {toTime !== "" && "-"} {toTime}
                         </Span>
                     </TextWrap>
+
                     <TextWrap className="text-wrap">
                         <SponsorText className="sponsors__address">
                             Adress:
@@ -122,6 +123,9 @@ export const SponsorCard = ({ item }) => {
             </WrapContent>
         </SponsorCardWrapper>
     );
+
+    
+
 };
 
 

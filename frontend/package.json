@@ -1,8 +1,8 @@
 {
-  "name": "your-pet-project-frontend",
+  "name": "project_bf",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://YuriyPilipenkoKH.github.io/your-pet-project-frontend/",
+  "homepage": "https://Ihor849.github.io/project_bf/",
   "dependencies": {
     "@emotion/is-prop-valid": "^1.2.1",
     "@fontsource/roboto": "^5.0.8",
@@ -38,7 +38,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/YuriyPilipenkoKH/your-pet-project-frontend"
+    "url": "git+https://github.com/Ihor849/project_bf"
   },
   "scripts": {
     "predeploy": "npm run build",
