@@ -1,7 +1,12 @@
+//пидключение базы через mongoose
+// const mongoose = require('mongoose');
+// mongoose.connect('mongodb://127.0.0.1/test'); деструктуризируем connect из mongoose
+
 const { connect } = require('mongoose');
 
 const connectDb = async () => {
   try {
+    console.log(process.env.DB_HOST);
     const db = await connect(process.env.DB_HOST);
     console.log(
       `Database is connected. Name:${db.connection.name}.

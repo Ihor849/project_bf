@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "  nodemon ./backend/src/server.js",
+    "start": "cross-env NODE_ENV=production node ./backend/src/server.js",
+    "dev": "cross-env NODE_ENV=development nodemon ./backend/src/server.js",
     "client": "npm start --prefix frontend",
     "lint": "eslint **/*.js",
     "lint:fix": "eslint --fix **/*.js"
