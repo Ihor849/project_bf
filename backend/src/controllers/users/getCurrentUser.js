@@ -1,5 +1,5 @@
 const getCurrentUser = async (req,res) => {
-    console.log(req.user);
+    
     const { _id, name, email, avatarURL, birthday, phone, location } = req.user;
 
 

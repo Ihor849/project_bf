@@ -102,7 +102,7 @@ const updateUserSchema = Joi.object({
 const userSchemas = {
   registerSchema,
   loginSchema,
-//   updateUserSchema,
+  updateUserSchema,
 };
 
 
