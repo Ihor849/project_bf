@@ -5,10 +5,9 @@ const multer = require("multer");
 const { generateId } = require("../helpers");
 
 
-const configPath = path.join(__dirname,'..','..','..','config','.env');
-console.log(process.env.CLOUDINARY_NAME)
-require('dotenv').config({ path: configPath });
 const { CLOUDINARY_NAME, CLOUDINARY_KEY, CLOUDINARY_SECRET } = process.env;
+
+
 
 cloudinary.config({
   cloud_name: CLOUDINARY_NAME,
@@ -16,11 +15,15 @@ cloudinary.config({
   api_secret: CLOUDINARY_SECRET,
 });
 
+
+
+
 const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
 
   params: async (req, file) => {
     const { _id } = req.user;
+    // console.log(req.user);
     const originalnameWithoutType = file.originalname.replace(
       /\.(jpe?g|png)$/i,
       ""

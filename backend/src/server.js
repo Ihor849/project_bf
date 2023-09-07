@@ -1,6 +1,6 @@
 require("colors")
 const mongoose = require("mongoose");
-const connectDb = require("../../config/connectDb")
+// const connectDb = require("../../config/connectDb")
 
 const path = require('path');
 const configPath = path.join(__dirname, '..','..','config','.env');

@@ -12,7 +12,7 @@ const {User}= require("../../models")
 const { httpError } = require("../../helpers");
 
 const { SECRET_KEY } = process.env;
-
+console.log(SECRET_KEY);
 
 
 const register = async (req, res) => {
