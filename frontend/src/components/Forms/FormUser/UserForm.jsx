@@ -215,6 +215,7 @@ const UserForm = () => {
                     )}
 
                     <input
+                    disabled={!showData}
                         type="file"
                         id="userPhoto"
                         name="userPhoto"
