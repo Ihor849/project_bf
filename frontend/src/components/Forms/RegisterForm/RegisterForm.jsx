@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
     ButtonSubmit,
     Form,
     IconCrossValidate,
     IconOkey,
-    Input,
+    InputForAuthorization,
     LabelForRegistration,
     LinkToForm,
     Question,
@@ -16,13 +16,21 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { IconCross, iconEyes } from '../../../images/icons';
 import { useForm } from 'react-hook-form';
 import { object, string } from 'yup';
+import { useDispatch } from 'react-redux';
+import { authOperations } from '../../../redux/auth';
+import { useAll } from '../../../hooks/useAll';
+import { langEN, langUA } from '../../../utils/languages';
+import { toast } from 'react-toastify';
 
 const schema = object({
     name: string()
         .required()
         .min(2, 'Name should be at least 2 characters')
         .max(16, 'Name should not exceed 16 characters')
-        .matches(/^[a-zA-Z]+$/, 'Name should contain only letters'),
+        .matches(
+            /^[a-zA-Z]{2,16}$/,
+            'Name should contain only letters and without spaces'
+        ),
     email: string()
         .required()
         .matches(
@@ -33,17 +41,12 @@ const schema = object({
         .required()
         .matches(
             /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,16}$/,
-            "Password: 1 lowercase, 1 uppercase, 1 digit, 6-16 characters."
-        ),
-    confirmPassword: string()
-        .required()
-        .matches(
-            /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,16}$/,
-            "Password: 1 lowercase, 1 uppercase, 1 digit, 6-16 characters."
+            'Password: 1 lowercase, 1 uppercase, 1 digit, 6-16 characters.'
         ),
 }).required();
 
 export default function RegisterForm() {
+    const dispatch = useDispatch();
     const [showOne, setShowOne] = useState(false);
     const [showTwo, setShowTwo] = useState(false);
     const [isNameValid, setIsNameValid] = useState(false);
@@ -55,10 +58,10 @@ export default function RegisterForm() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
+    const [confirmPasswordError, setConfirmPasswordError] = useState('');
     const {
         register,
         handleSubmit,
-        reset,
         formState: { errors },
     } = useForm({
         defaultValues: {
@@ -71,31 +74,50 @@ export default function RegisterForm() {
     });
     const handleClickShowOne = () => setShowOne(!showOne);
     const handleClickShowTwo = () => setShowTwo(!showTwo);
-    const deliveryDataUser = (name, email, password, confirmPassword) => {
-        // dispatch(
-        //     registerUser({
-        //         name,
-        //         email,
-        //         password,
-        //     })
-        // );
+
+    const { language } = useAll();
+    const [lang, setLang] = useState(langUA);
+
+    useEffect(() => {
+        setLang(language === 'english' ? langEN : langUA);
+    }, [language]);
+
+    const deliveryDataUser = (name, email, password) => {
+        dispatch(authOperations.register({ name, email, password }))
+            .unwrap()
+            .catch(() => {
+                toast.error('The user already exists');
+            });
+    };
+    const reset = () => {
+        setName('');
+        setEmail('');
+        setPassword('');
+        setConfirmPassword('');
+        setIsNameValid(false);
+        setIsEmailValid(false);
+        setIsPasswordlValid(false);
+        setIsConfirmPasswordlValid(false);
     };
     const deliveryData = data => {
-        console.log(321321);
-        const { name, email, password, confirmPassword } = data;
-        deliveryDataUser(name, email, password, confirmPassword);
+        if (data.password !== confirmPassword) {
+            setConfirmPasswordError("'Passwords do not match'");
+            return;
+        }
+        const { name, email, password } = data;
+        deliveryDataUser(name, email, password);
         reset();
     };
 
     return (
         <Form>
             <form onSubmit={handleSubmit(deliveryData)}>
-                <Title>Registration</Title>
+                <Title>{lang.regTitle}</Title>
                 <LabelForRegistration>
-                    <Input
+                    <InputForAuthorization
                         {...register('name')}
                         aria-invalid={errors.name ? 'true' : 'false'}
-                        placeholder="Name"
+                        placeholder={lang.formName}
                         type="text"
                         value={name}
                         style={{
@@ -106,18 +128,17 @@ export default function RegisterForm() {
                                 : '1px solid var(--blue)',
                         }}
                         onChange={e => {
-                            const isValid =
-                                /^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$/.test(
-                                    e.target.value
-                                );
+                            const isValid = /^[a-zA-Z]{2,16}$/.test(
+                                e.target.value
+                            );
                             setIsNameValid(isValid);
                             setName(e.target.value);
                             if (isValid) {
                                 errors.name = undefined;
                             }
                         }}
-                    ></Input>
-                    {isNameValid && (
+                    ></InputForAuthorization>
+                    {isNameValid && !errors.name && (
                         <IconOkey
                             xmlns="http://www.w3.org/2000/svg"
                             width="24"
@@ -149,10 +170,10 @@ export default function RegisterForm() {
                     )}
                 </LabelForRegistration>
                 <LabelForRegistration>
-                    <Input
+                    <InputForAuthorization
                         {...register('email')}
                         aria-invalid={errors.email ? 'true' : 'false'}
-                        placeholder="Email"
+                        placeholder={lang.email}
                         type="email"
                         value={email}
                         style={{
@@ -164,7 +185,7 @@ export default function RegisterForm() {
                         }}
                         onChange={e => {
                             const isValid =
-                                /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/.test(
+                                /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,})+$/.test(
                                     e.target.value
                                 );
                             setIsEmailValid(isValid);
@@ -173,8 +194,8 @@ export default function RegisterForm() {
                                 errors.email = undefined;
                             }
                         }}
-                    ></Input>
-                    {isEmailValid && (
+                    ></InputForAuthorization>
+                    {isEmailValid && !errors.email && (
                         <IconOkey
                             xmlns="http://www.w3.org/2000/svg"
                             width="24"
@@ -207,12 +228,12 @@ export default function RegisterForm() {
                 </LabelForRegistration>
 
                 <LabelForRegistration>
-                    <Input
+                    <InputForAuthorization
                         {...register('password')}
                         aria-invalid={errors.password ? 'true' : 'false'}
-                        placeholder="Password"
+                        placeholder={lang.pass}
                         value={password}
-                        title='Password must contain at least one lowercase letter, one uppercase letter, and one digit. It should be 6 to 16 characters long.'
+                        title="Password must contain at least one lowercase letter, one uppercase letter, and one digit. It should be 6 to 16 characters long."
                         type={showOne ? 'text' : 'password'}
                         style={{
                             border: errors.password
@@ -222,15 +243,18 @@ export default function RegisterForm() {
                                 : '1px solid var(--blue)',
                         }}
                         onChange={e => {
-                            const isValid = /.{7,}/.test(e.target.value);
+                            const isValid =
+                                /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,16}$/.test(
+                                    e.target.value
+                                );
                             setIsPasswordlValid(isValid);
                             setPassword(e.target.value);
                             if (isValid) {
                                 errors.password = undefined;
                             }
                         }}
-                    ></Input>
-                    {isPasswordValid && (
+                    ></InputForAuthorization>
+                    {isPasswordValid && !errors.password && (
                         <IconOkey
                             xmlns="http://www.w3.org/2000/svg"
                             width="24"
@@ -270,31 +294,34 @@ export default function RegisterForm() {
                     </ShowPasswordButton>
                 </LabelForRegistration>
                 <LabelForRegistration registration={true}>
-                    <Input
+                    <InputForAuthorization
                         {...register('confirmPassword')}
-                        aria-invalid={errors.confirmPassword ? 'true' : 'false'}
-                        placeholder="Confirm password"
+                        aria-invalid={confirmPasswordError ? 'true' : 'false'}
+                        placeholder={lang.confirmPass}
                         type={showTwo ? 'text' : 'password'}
                         value={confirmPassword}
-                        title='Password must contain at least one lowercase letter, one uppercase letter, and one digit. It should be 6 to 16 characters long.'
+                        title="Password must contain at least one lowercase letter, one uppercase letter, and one digit. It should be 6 to 16 characters long."
                         style={{
-                            border: errors.confirmPassword
+                            border: confirmPasswordError
                                 ? '1px solid var(--red)'
                                 : isConfirmPasswordValid &&
-                                  !errors.confirmPassword
+                                  !confirmPasswordError
                                 ? '1px solid var(--green)'
                                 : '1px solid var(--blue)',
                         }}
                         onChange={e => {
-                            const isValid = /.{7,}/.test(e.target.value);
+                            const isValid =
+                                /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,16}$/.test(
+                                    e.target.value
+                                );
                             setIsConfirmPasswordlValid(isValid);
                             if (isValid) {
-                                errors.confirmPassword = undefined;
+                                setConfirmPasswordError('');
                             }
                             setConfirmPassword(e.target.value);
                         }}
-                    ></Input>
-                    {isConfirmPasswordValid && (
+                    ></InputForAuthorization>
+                    {isConfirmPasswordValid && !confirmPasswordError && (
                         <IconOkey
                             xmlns="http://www.w3.org/2000/svg"
                             width="24"
@@ -309,10 +336,10 @@ export default function RegisterForm() {
                             />
                         </IconOkey>
                     )}
-                    {errors.confirmPassword && (
+                    {confirmPasswordError && (
                         <>
                             <TextValidation>
-                                {errors.confirmPassword.message}
+                                {confirmPasswordError}
                             </TextValidation>
                             <IconCrossValidate
                                 onClick={() => {
@@ -333,12 +360,12 @@ export default function RegisterForm() {
                         {iconEyes}
                     </ShowPasswordButton>
                 </LabelForRegistration>
-                <ButtonSubmit type="submit">Registration</ButtonSubmit>
+                <ButtonSubmit type="submit"> {lang.regTitle} </ButtonSubmit>
                 <Question>
-                    Don't have an account?{' '}
+                    {lang.alreadyGot}{' '}
                     {
                         <LinkToForm href="fwefew" to="/login">
-                            Login
+                            {lang.logBtn}
                         </LinkToForm>
                     }
                 </Question>

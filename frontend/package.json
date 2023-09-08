@@ -1,8 +1,8 @@
 {
-  "name": "your-pet-project-frontend",
+  "name": "project_bf",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://YuriyPilipenkoKH.github.io/your-pet-project-frontend/",
+  "homepage": "https://Ihor849.github.io/project_bf/",
   "dependencies": {
     "@emotion/is-prop-valid": "^1.2.1",
     "@fontsource/roboto": "^5.0.8",
@@ -13,7 +13,9 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.4.0",
+    "date-fns": "^2.30.0",
     "formik": "^2.4.3",
+    "modern-normalize": "^2.0.0",
     "moment": "^2.29.4",
     "notiflix": "^3.2.6",
     "react": "^18.2.0",
@@ -21,20 +23,22 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.45.4",
     "react-icons": "^4.10.1",
+    "react-paginate": "^8.2.0",
     "react-redux": "^8.1.2",
     "react-router-dom": "^6.15.0",
     "react-scripts": "5.0.1",
+    "react-spinners": "^0.13.8",
+    "react-toastify": "^9.1.3",
     "redux-persist": "^6.0.0",
     "redux-thunk": "^2.4.2",
     "styled-components": "^6.0.7",
-    "tui-pagination": "^3.4.1",
     "web-vitals": "^2.1.4",
     "yap": "^0.0.2",
     "yup": "^1.2.0"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/YuriyPilipenkoKH/your-pet-project-frontend"
+    "url": "git+https://github.com/Ihor849/project_bf.git"
   },
   "scripts": {
     "predeploy": "npm run build",
@@ -66,5 +70,12 @@
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "gh-pages": "^6.0.0",
     "prop-types": "^15.8.1"
-  }
+  },
+  "description": "Welcome to our online platform, where the world of furry companions comes to life! Our website is your ultimate destination for both pet seekers and pet lovers. Whether you're looking to add a new member to your family or trying to find a loving home for a pet in need, we've got you covered.\r This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "bugs": {
+    "url": "https://github.com/Ihor849/project_bf/issues"
+  },
+  "main": "index.js",
+  "author": "Ihor",
+  "license": "ISC"
 }
