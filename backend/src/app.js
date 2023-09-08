@@ -7,6 +7,7 @@ const authRouter = require("./routes/api/users");
 const sponsorsRouter = require("./routes/api/sponsors");
 const newsRouter = require("./routes/api/news");
 const petRouter = require("./routes/api/pets");
+const noticeRouter = require("./routes/api/notices");
 
 const app = express();
 const formatsLogger = app.get("env") === "development" ? "dev" : "short";
@@ -20,6 +21,7 @@ app.use("/users", authRouter);
 app.use("/sponsors", sponsorsRouter);
 app.use("/news", newsRouter);
 app.use("/pets", petRouter);
+app.use("/notices", noticeRouter);
 
 
 app.use((req, res) => {
