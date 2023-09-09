@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-axios.defaults.baseURL = 'https://your-pet-shw3.onrender.com';
-// axios.defaults.baseURL = 'mongodb://localhost:27017/your_pet';
+
+axios.defaults.baseURL = 'http://localhost:5000';
 
 const fetchAllNotices = createAsyncThunk(
     'notices/noticesAll',

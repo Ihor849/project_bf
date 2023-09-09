@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-axios.defaults.baseURL = 'https://your-pet-shw3.onrender.com';
-// axios.defaults.baseURL = 'http://localhost:3001/project_bf';
+
+axios.defaults.baseURL = 'http://localhost:5000';
 
 
 
